@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<head>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        /* just aesthetics */
+
+        body {
+            height: 100vh;
+            display: flex;
+            background: azure;
+        }
+
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 30px;
+            font-family: 'Times New Roman';
+        }
+
+        .label {
+            font-size: 20px;
+            font-family: 'Times New Roman';
+        }
+
+        .number {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="container p-3 my-3 bg-dark text-black ">
+    <div class="jumbotron jumbotron-fluid"
+        style="height:350px; margin-top:250px; width:1000px; margin-left:60px;margin-right: 60px; padding:2rem;">
+        <div class="slidecontainer">
+            <h1>QUESTIONNAIRE</h1>
+            <div class="question-page text-right"><span class="current-page"></span>/50</div>
+
+            <div class="row" id="data">
+                <div class="col-md-12 active-question" id="q1">
+                    <div class="number"></div><label class="label label-default">I am responsive
+                        to my child’s feelings and
+                        needs:</label>
+
+                    <input type="range" width="200" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b>Never</b>
+
+                        </div>
+                        <div>
+                            <b>Always</b>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I take my child’s wishes into
+                        consideration before I
+                        ask him/her to do something</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I explain to my child how I feel about
+                        his/her good/bad
+                        behaviour</label>
+                    <input type="range" class="slider" min="0" max="6" name="sld3" value="6"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I encourage my child to talk about
+                        his/her feelings and
+                        problems</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I encourage my child to freely “speak
+                        his/her mind”,
+                        even if he/she disagrees with me</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I explain the reasons behind my
+                        expectations</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I provide comfort and understanding
+                        when my child is
+                        upset</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I compliment my child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I consider my child’s preferences when
+                        I make plans for
+                        the family(e.g., weekends away and holidays)</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I respect my child’s opinion and
+                        encourage him/her to
+                        express them</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I treat my child as an equal member of
+                        the
+                        family</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I provide my child reasons for the
+                        expectations I have
+                        for him/her</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I have warm and intimate times together
+                        with my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">When my child asks me why he/she must
+                        do something I
+                        tell him/her it is because I said so, I </label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b>Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I punish my child by taking privileges
+                        away from
+                        him/her (e.g., TV, games, visiting friends)</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I yell when I disapprove of my child’s
+                        behaviour</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I explode in anger towards my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I spank my child when I don’t like what
+                        he/she does or
+                        says</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I use criticism to make my child
+                        improve his/her
+                        behaviour</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I use threats as a form of punishment
+                        with little or
+                        no justification</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I punish my child by withholding
+                        emotional expressions
+                        (e.g., kisses and cuddles)</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I openly criticise my child when
+                        his/her behaviour
+                        does not meet my expectations</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I find myself struggling to try to
+                        change how my child
+                        thinks or feels about things</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I feel the need to point out my
+                        child’s past
+                        behavioural problems to make sure he/she will not do them again</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I remind my child that I am his/her
+                        parent</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I remind my child of all the things I
+                        am doing, and I
+                        have done for him/her</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I find it difficult to discipline my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I give into my child when he/she
+                        causes a commotion
+                        about something</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I spoil my child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I ignore my child’s bad
+                        behaviour</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I put rules for consequences, but I do
+                        not actually do
+                        them</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div> <label class="label label-default">I threaten my child with punishment
+                        but do not give
+                        it</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I carry out discipline only after my
+                        child
+                        misbehaves</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I bribe my child with rewards to make
+                        him/her obey
+                        me</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I am afraid to discipline my child even
+                        when my child
+                        acts contrary to my wishes</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I am not sure how to solve my child’s
+                        misbehaviour</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I am afraid that disciplining my child
+                        will cause my
+                        child to dislike me</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">If my child annoys someone, I tend to
+                        ignore
+                        it</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I don’t criticize my child when my
+                        child disrespects
+                        others</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I believe my child will do fine and
+                        have less
+                        expectations </label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">My spouse spends more time with my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">My work is much stressful, so I have
+                        less time with my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">Since there are family members to take
+                        care of my
+                        child, I can focus on my work</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I find it hard to take time off work
+                        and spend time
+                        with my child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">My spouse or family members make rules
+                        for my child
+                        and I follow it</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I find it hard to engage with my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">Other priorities overtake when it comes
+                        to spend time
+                        with my child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">Whenever I plan to spend time with my
+                        child, I get
+                        interrupted by other plans</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I tend to forget the things I ought to
+                        do with my
+                        child</label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="display:none">
+
+                    <div class="number"></div><label class="label label-default">I believe there should be less rules
+                        for my child
+                    </label>
+                    <input type="range" min="0" max="6" value="6" class="slider" id="myRange"
+                        onchange="show_value(this)">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <b> Never</b>
+                        </div>
+                        <div>
+                            <b> Always</b>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="float:left;">
+                        <button class="btn btn-primary active" id="myBtn" onclick="previous()">Previous</button>
+                    </div>
+                    <div style="float:right;">
+                        <button class="btn btn-primary active" onclick="next()">Next</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        var qCnt = 1;
+        var data = [];
+        displayQuestionCount();
+        // function dec() {
+        //var x = parseInt(document.getElementById("inc").value, 10);
+        //x++;
+        //document.getElementById("num").innerHTML= x;
+        //}
+
+        function show_value(x) {
+            var val = x.value;
+            $(x).next().next().html(val);
+        }
+
+        function next() {
+            var qElems = document.querySelectorAll('#data>div');
+            qCnt++;
+
+            var currQuestionVal = $(".active-question .slider").val();
+            data.push(currQuestionVal);
+            var nxtCntrl = $(".active-question").next();
+            $("body").find(".active-question").removeClass("active-question");
+            $(nxtCntrl).addClass("active-question");
+
+            displayQuestionCount();
+
+            for (var i = 0; i < qElems.length; i++) {
+                if (qElems[i].style.display != 'none') {
+                    qElems[i].style.display = 'none';
+                    if (i == qElems.length - 1) {
+                        location.replace("DataProtection.html")
+                    } else {
+                        qElems[i + 1].style.display = 'block';
+                    }
+                    break;
+                }
+            }
+        }
+
+        function previous() {
+            var qElems = document.querySelectorAll('#data>div');
+            if (qCnt > 1) {
+                qCnt--;
+                displayQuestionCount();
+            }
+            var currQuestionVal = $(".active-question .slider").val();
+            data.unshift(currQuestionVal);
+            var nxtCntrl = $(".active-question").prev();
+            $("body").find(".active-question").removeClass("active-question");
+            $(nxtCntrl).addClass("active-question");
+
+
+            for (var i = 1; i < qElems.length; i++) {
+
+                if (qElems[i].style.display != 'none') {
+                    qElems[i].style.display = 'none';
+                    if (i < 1) {
+                        document.getElementById("q1").hidden = true;
+                    } else {
+                        qElems[i - 1].style.display = 'block';
+                    }
+                    break;
+                }
+            }
+        }
+
+        function displayQuestionCount() {
+            $(".number").text("Q" + qCnt + ". ");
+            $(".question-page .current-page").text(qCnt);
+        }
+    </script>
+</body>
+
+</html>
