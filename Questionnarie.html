@@ -1087,7 +1087,7 @@
                 displayQuestionCount();
             }
             var currQuestionVal = $(".active-question .slider").val();
-            data.unshift(currQuestionVal);
+            data.shift(currQuestionVal);
             var nxtCntrl = $(".active-question").prev();
             $("body").find(".active-question").removeClass("active-question");
             $(nxtCntrl).addClass("active-question");
